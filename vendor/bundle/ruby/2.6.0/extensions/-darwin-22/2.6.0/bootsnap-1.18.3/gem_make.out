@@ -1,0 +1,19 @@
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.18.3/ext/bootsnap
+/Users/naoki/.rbenv/versions/2.6.4/bin/ruby -I /Users/naoki/.rbenv/versions/2.6.4/lib/ruby/2.6.0 -r ./siteconf20240330-2184-q3kx4b.rb extconf.rb
+checking for fdatasync() in unistd.h... yes
+checking for whether -D_GNU_SOURCE is accepted as CPPFLAGS... yes
+checking for whether -O3 is accepted as CFLAGS... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.18.3/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.18.3/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.18.3/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20240330-2184-xir541/bootsnap

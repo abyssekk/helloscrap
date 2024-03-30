@@ -1,0 +1,15 @@
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/racc-1.7.3/ext/racc/cparse
+/Users/naoki/.rbenv/versions/2.6.4/bin/ruby -I /Users/naoki/.rbenv/versions/2.6.4/lib/ruby/2.6.0 -r ./siteconf20240330-2184-1e60v0j.rb extconf.rb
+creating Makefile
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/racc-1.7.3/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/racc-1.7.3/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/racc-1.7.3/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20240330-2184-xf9pwg/racc

@@ -1,0 +1,29 @@
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/nio4r-2.7.1/ext/nio4r
+/Users/naoki/.rbenv/versions/2.6.4/bin/ruby -I /Users/naoki/.rbenv/versions/2.6.4/lib/ruby/2.6.0 -r ./siteconf20240330-2184-16gnfcz.rb extconf.rb
+checking for unistd.h... yes
+checking for rb_io_descriptor()... no
+checking for linux/aio_abi.h... no
+checking for linux/io_uring.h... no
+checking for sys/select.h... yes
+checking for port_event_t in poll.h... no
+checking for sys/epoll.h... no
+checking for sys/event.h... yes
+checking for sys/queue.h... yes
+checking for port_event_t in port.h... no
+checking for sys/resource.h... yes
+creating Makefile
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/nio4r-2.7.1/ext/nio4r
+make "DESTDIR=" clean
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/nio4r-2.7.1/ext/nio4r
+make "DESTDIR="
+compiling bytebuffer.c
+compiling monitor.c
+compiling nio4r_ext.c
+compiling selector.c
+linking shared-object nio4r_ext.bundle
+
+current directory: /Users/naoki/dev/helloscrap/vendor/bundle/ruby/2.6.0/gems/nio4r-2.7.1/ext/nio4r
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20240330-2184-ti2eww
