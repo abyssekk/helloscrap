@@ -8,6 +8,9 @@ ja:
       title: ユーザー登録
       to_login_page: ログインページへ
       register: 登録
+    create:
+      success: ユーザーの作成に成功しました
+      fail: ユーザーの作成に失敗しました
   user_sessions:
     new:
       title: ログイン
@@ -15,3 +18,8 @@ ja:
       password: パスワード
       to_register_page: 登録ページへ
       to_password_reset_page: パスワードをお忘れの方はこちら
+    create:
+      success: ログインに成功しました
+      fail: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
