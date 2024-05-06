@@ -3,6 +3,13 @@ ja:
     login: ログイン
     register: 登録
     logout: ログアウト
+    scrap: スクラップ
+    scrap_all: スクラップ一覧
+    scrap_new: スクラップ作成
+    updated: アップデートしました
+    not_updated: アップデートできませんでした
+    delete_check: 削除しますか？
+    deleted: 削除しました
   users:
     new:
       title: ユーザー登録
@@ -23,3 +30,7 @@ ja:
       fail: ログインに失敗しました
     destroy:
       success: ログアウトしました
+  boards:
+    create:
+      success: スクラップを作成しました
+      fail: スクラップの作成に失敗しました

@@ -9,3 +9,6 @@ ja:
         last_name: 姓
         crypted_password: パスワード
         password_confirmation: パスワード確認
+      borad:
+        title: タイトル
+        body: 記事
