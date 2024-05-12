@@ -3,7 +3,7 @@
       <%= f.label :url %>
       <%= f.text_field :url, class: 'form-control' %>
     </div>
-      <%= f.submit t('defaults.register'), class: 'btn btn-primary' %>
+    <%= f.submit t('defaults.register'), class: 'btn btn-primary', name: 'url_extract' %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
@@ -12,5 +12,5 @@
       <%= f.label :body %>
       <%= f.text_area :body, class: 'form-control', rows: 10 %>
     </div>
-    <%= f.submit t('defaults.register'), class: 'btn btn-primary' %>
+    <%= f.submit t('defaults.register'), class: 'btn btn-primary', name: 'register' %>
 <% end %>
