@@ -1,8 +1,20 @@
 class BoardsController < ApplicationController
+    require 'extractcontent.rb'
+    require 'open-uri'
+    
     def new
         @board = Board.new
+
+        # とりあえず抽出実験してみた時の名残
+        #url = 'https://k-tai.watch.impress.co.jp/docs/news/1592532.html'
+        #html = URI.open(url).read
+        #body, title = ExtractContent::analyse(html) 
+        #p body
+
         if session[:url] then
-            @board = Board.new(title: session[:url], body: session[:url], url: session[:url])
+            html = URI.open(session[:url]).read
+            url_body, url_title = ExtractContent::analyse(html)
+            @board = Board.new(title: url_title, body: url_body, url: session[:url])
             session.delete(:url)
         end
     end
@@ -50,6 +62,7 @@ class BoardsController < ApplicationController
     end
 
     def index
+        session.delete(:url) #いったん入れただけ。あとで削除する。
         @boards = Board.where(user_id: current_user.id).order('created_at DESC')
     end
 

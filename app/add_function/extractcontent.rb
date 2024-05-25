@@ -1,5 +1,5 @@
 #!/usr/bin/ruby -Ku
-$KCODE="u"
+# encoding: UTF-8
 
 # Author:: Nakatani Shuyo
 # Copyright:: (c)2007 Cybozu Labs Inc. All rights reserved.
@@ -76,7 +76,9 @@ module ExtractContent
     html = eliminate_useless_tags(html)
 
     # h? block including title
-    html.gsub!(/(<h\d\s*>\s*(.*?)\s*<\/h\d\s*>)/is) do |m|
+    html.encode!('UTF-8', 'UTF-8', invalid: :replace, undef: :replace)
+    title.encode!('UTF-8', 'UTF-8', invalid: :replace, undef: :replace)
+    html.gsub!(Regexp.new('(<h\d\s*>\s*(.*?)\s*<\/h\d\s*>)', Regexp::IGNORECASE | Regexp::MULTILINE)) do |m|
       if $2.length >= 3 && title.include?($2) then "<div>#{$2}</div>" else $1 end
     end
 
@@ -134,15 +136,16 @@ module ExtractContent
 
   # Eliminates useless tags
   def self.eliminate_useless_tags(html)
+    html.encode!('UTF-8', 'UTF-8', invalid: :replace, undef: :replace)
     # eliminate useless symbols
-    html.gsub!(/\342(?:\200[\230-\235]|\206[\220-\223]|\226[\240-\275]|\227[\206-\257]|\230[\205\206])/,'')
+    html.gsub!(/[\u2018-\u201d\u2190-\u2193\u25a0-\u25bd\u25c6-\u25ef\u2605-\u2606]/, '')
 
     # eliminate useless html tags
     html.gsub!(/<(script|style|select|noscript)[^>]*>.*?<\/\1\s*>/imn, '')
     html.gsub!(/<!--.*?-->/m, '')
-    html.gsub!(/<![A-Za-z].*?>/s, '')
+    html.gsub!(/<![A-Za-z].*?>/m, '')
     html.gsub!(/<div\s[^>]*class\s*=\s*['"]?alpslab-slide["']?[^>]*>.*?<\/div\s*>/m, '')
-    html.gsub!(/<div\s[^>]*(id|class)\s*=\s*['"]?\S*more\S*["']?[^>]*>/is, '')
+    html.gsub!(/<div\s[^>]*(id|class)\s*=\s*['"]?\S*more\S*["']?[^>]*>/i, '')
 
     html
   end
@@ -164,7 +167,7 @@ module ExtractContent
   # リンクリスト判定
   # リストであれば非本文として除外する
   def self.islinklist(st)
-    if st=~/<(?:ul|dl|ol)(.+?)<\/(?:ul|dl|ol)>/ism
+    if st=~/<(?:ul|dl|ol)(.+?)<\/(?:ul|dl|ol)>/im
       listpart = $1
       outside = st.gsub(/<(?:ul|dl)(.+?)<\/(?:ul|dl)>/ismn, '').gsub(/<.+?>/mn, '').gsub(/\s+/, ' ')
       list = listpart.split(/<li[^>]*>/)
@@ -188,11 +191,19 @@ module ExtractContent
   def self.strip_tags(html)
     st = html.gsub(/<.+?>/m, '')
     # Convert from wide character to ascii
-    st.gsub!(/\357\274([\201-\272])/){($1[0]-96).chr} # symbols, 0-9, A-Z
-    st.gsub!(/\357\275([\201-\232])/){($1[0]-32).chr} # a-z
-    st.gsub!(/\342[\224\225][\200-\277]/, '') # keisen
-    st.gsub!(/\343\200\200/, ' ')
-    self::CHARREF.each{|ref, c| st.gsub!(ref, c) }
+    # symbols, 0-9, A-Z
+    #st.gsub!(/\357\274([\201-\272])/){($1[0]-96).chr}
+    # a-z
+    #st.gsub!(/\357\275([\201-\232])/){($1[0]-32).chr}
+    if !st.is_a?(String)
+      require 'unicode_normalize'
+      st = Unicode::Normalize.nfkc(st.to_s)
+      st = st.encode('utf-8')
+    end
+    st.encode!('UTF-8', 'UTF-8', invalid: :replace, undef: :replace)
+    # keisen
+    st.gsub!(/\u2014|\u2015|\u3000/, '')
+    self::CHARREF.each { |ref, c| st.gsub!(ref.encode(Encoding::UTF_8), c) }
     require 'cgi'
     st = CGI.unescapeHTML(st)
     st.gsub(/[ \t]+/, " ")
