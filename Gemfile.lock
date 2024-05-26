@@ -154,7 +154,6 @@ GEM
     popper_js (1.16.1)
     public_suffix (5.0.4)
     puma (3.12.6)
-    pycall (1.5.1)
     racc (1.7.3)
     rack (2.2.9)
     rack-test (2.1.0)
@@ -196,6 +195,9 @@ GEM
     ruby2_keywords (0.0.5)
     ruby_dep (1.5.0)
     rubyzip (2.3.2)
+    sanitize (6.1.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.12.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -219,6 +221,9 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
+    simple_form (5.3.1)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
@@ -240,6 +245,8 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.9)
       mini_portile2 (~> 2.8.0)
+    summernote-rails (0.8.12.0)
+      railties (>= 3.1)
     thor (1.3.1)
     thread_safe (0.3.6)
     tilt (2.3.0)
@@ -278,15 +285,17 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
-  pycall
   rails (~> 5.2.6)
   rails-i18n (~> 5.1)
+  sanitize
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_form
   sorcery
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
+  summernote-rails (~> 0.8.9)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

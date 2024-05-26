@@ -45,6 +45,10 @@ gem 'font-awesome-sass', '~> 5.11.2'
 gem 'rails-i18n', '~> 5.1'
 gem 'byebug'
 
+gem 'simple_form'
+gem 'summernote-rails', '~> 0.8.9'
+gem 'sanitize'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

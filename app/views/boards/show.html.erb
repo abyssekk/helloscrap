@@ -13,8 +13,13 @@
               </ul>
             </div>
           </div>
+          # sanitizeするものとしないものを選ぶ時にいったん2つ作っただけ
           <p>本文：<%= @board.body %></p>
+          <p>本文：<%= sanitize @board.body %></p>
           <p>URL: <%= @board.url %></p>
+          <p>気付き: <%= @board.notice %></p>
+          <p>気付き: <%= (@board.notice).html_safe %></p>
+          <p>気付き: <%= sanitize @board.notice %></p>
         </div>
       </article>
     </div>

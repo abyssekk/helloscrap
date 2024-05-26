@@ -1,5 +1,5 @@
 <header>
-  <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
+  <nav class='navbar navbar-expand-lg navigation navbar-light'>
     <a class='navbar-brand' href='/'>
       <%= image_tag 'logo.png' %>
     </a>
@@ -19,10 +19,6 @@
             <%= link_to t("defaults.scrap_all"), boards_path, class: "dropdown-item" %>
             <%= link_to t("defaults.scrap_new"), new_board_path, class: "dropdown-item" %>
           </div>
-        </li>
-
-        <li class='nav-item'>
-          <a class='nav-link' href='#'>ブックマーク一覧</a>
         </li>
 
         <li class='nav-item dropdown dropdown-slide'>

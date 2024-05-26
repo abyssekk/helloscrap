@@ -5,12 +5,6 @@ class BoardsController < ApplicationController
     def new
         @board = Board.new
 
-        # とりあえず抽出実験してみた時の名残
-        #url = 'https://k-tai.watch.impress.co.jp/docs/news/1592532.html'
-        #html = URI.open(url).read
-        #body, title = ExtractContent::analyse(html) 
-        #p body
-
         if session[:url] then
             html = URI.open(session[:url]).read
             url_body, url_title = ExtractContent::analyse(html)
@@ -80,7 +74,7 @@ class BoardsController < ApplicationController
     private
 
     def board_params
-        params.require(:board).permit(:title, :body, :url)
+        params.require(:board).permit(:title, :body, :url, :notice)
     end
 
     def extract

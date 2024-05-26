@@ -1,16 +1,24 @@
 <%= form_with model: @board, local: true do |f| %>
     <div class="form-group">
-      <%= f.label :url %>
-      <%= f.text_field :url, class: 'form-control' %>
+      <%= f.label :url %><br>
+      <%= f.text_field :url, class: 'form-control', style: "width: 90%; display: inline-block;" %>
+      <%= button_tag(type: 'submit', name: 'url_extract', class: 'btn btn-dark', style: 'display: inline-block;') do %>
+        <i class="fas fa-redo-alt"></i>
+      <% end %>
     </div>
-    <%= f.submit t('defaults.register'), class: 'btn btn-primary', name: 'url_extract' %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
     </div>
-    <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control', rows: 10 %>
+    <div class="left-and-right">
+      <div class="form-group left-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, class: 'form-control', rows: 10, 'data-provider': :summernote %>
+      </div>
+      <div class="form-group right-group">
+        <%= f.label :notice %>
+        <%= f.text_area :notice, class: 'form-control', rows: 10, 'data-provider': :summernote %>
+      </div>
     </div>
-    <%= f.submit t('defaults.register'), class: 'btn btn-primary', name: 'register' %>
+    <%= f.submit t('defaults.register'), class: 'btn btn-dark', name: 'register' %>
 <% end %>

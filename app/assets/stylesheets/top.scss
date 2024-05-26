@@ -19,4 +19,15 @@
       }
     }
   }
-  
+
+.left-group, .right-group {
+  width: 50%;
+}
+.left-and-right {
+  display: flex;
+  column-gap: 0.5em;
+}
+.url_submit-button {
+  display: inline-block;
+  margin-top: 10px; /* 適切な余白を設定 */
+}
