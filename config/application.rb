@@ -15,6 +15,10 @@ module Helloscrap
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.time_zone = 'Tokyo'
 
+    # Sanitize setting
+    config.action_view.sanitized_allowed_tags = ['p', 'b', 'u', 'span', 'li', 'br', 'table', 'tr', 'td', 'tbody'] 
+    config.action_view.sanitized_allowed_attributes = ['style', 'class'] 
+
     config.generators do |g|
       g.skip_routes true
       g.assets false

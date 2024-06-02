@@ -1,27 +1,40 @@
-<div class="container pt-5">
+<style>
+    .custom-container {
+        width: 95%;
+        max-width: none;
+    }
+</style>
+<div class="container pt-5 custom-container">
   <div class="row mb-3">
-    <div class="col-lg-8 offset-lg-2">
-      <h1>掲示板詳細</h1>
-      <!-- 掲示板内容 -->
-      <article class="card">
-        <div class="card-body">
-          <div class='row'>
-            <div class='col-md-12'>
-              <h3 style='display: inline;'><%= @board.title %></h3>
-              <ul class="list-inline">
-                <li class="list-inline-item"><%= l @board.updated_at, format: :long %></li>
-              </ul>
+    <div class="col-12">
+    <p class="list-inline-item">登録日：<%= l @board.created_at, format: :long %></p>
+    <p class="list-inline-item">更新日：<%= l @board.updated_at, format: :long %></p>
+    <%= link_to edit_board_path(@board), id: "button-edit-#{@board.id}" do %>
+      <%= icon 'fa', 'pen' %>
+    <% end %>
+    <%= link_to board_path(@board), id: "button-delete-#{@board.id}", method: :delete, data: {confirm: t("defaults.delete_check")} do %>
+      <%= icon 'fas', 'trash' %>
+    <% end %><br>
+    <h2 style='display: inline;'><%= @board.title %></h2>
+    <h1></h1>
+    <p>URL: <%= @board.url %></p>
+      <!-- 内容 -->
+      <div class="row box-parent">
+        <div class="col">
+          <article class="card h-100">
+            <div class="card-body">
+              <p><b>本文</b><br><%= sanitize @board.body %></p>
             </div>
-          </div>
-          # sanitizeするものとしないものを選ぶ時にいったん2つ作っただけ
-          <p>本文：<%= @board.body %></p>
-          <p>本文：<%= sanitize @board.body %></p>
-          <p>URL: <%= @board.url %></p>
-          <p>気付き: <%= @board.notice %></p>
-          <p>気付き: <%= (@board.notice).html_safe %></p>
-          <p>気付き: <%= sanitize @board.notice %></p>
+          </article>
         </div>
-      </article>
+        <div class="col">
+          <article class="card h-100">
+            <div class="card-body">
+              <p><b>気付き</b><br><%= sanitize @board.notice %></p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   </div>
 </div>

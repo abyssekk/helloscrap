@@ -38,10 +38,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'sorcery'
 
-gem 'bootstrap', '~> 4.5.0'
-gem 'jquery-rails'
-gem 'font-awesome-sass', '~> 5.11.2'
-
 gem 'rails-i18n', '~> 5.1'
 gem 'byebug'
 
@@ -73,3 +69,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'bootstrap', '~> 4.3.1'
+gem 'font-awesome-sass', '~> 5.11.2'
+gem 'jquery-rails'

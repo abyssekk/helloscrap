@@ -1,5 +1,5 @@
 <header>
-  <nav class='navbar navbar-expand-lg navigation navbar-light'>
+  <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
     <a class='navbar-brand' href='/'>
       <%= image_tag 'logo.png' %>
     </a>
@@ -10,27 +10,10 @@
 
     <div class='collapse navbar-collapse' id='navbarSupportedContent'>
       <ul class='navbar-nav ml-auto main-nav align-items-center'>
-        <li class='nav-item dropdown dropdown-slide'>
-          <a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-            <%= t("defaults.scrap") %>
-          </a>
-
-          <div class='dropdown-menu dropdown-menu-right'>
-            <%= link_to t("defaults.scrap_all"), boards_path, class: "dropdown-item" %>
-            <%= link_to t("defaults.scrap_new"), new_board_path, class: "dropdown-item" %>
-          </div>
-        </li>
-
-        <li class='nav-item dropdown dropdown-slide'>
-          <a href='#' class='nav-link' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' id='header-profile'>
-            <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width: '40', height: '40' %>
-          </a>
-          <div class='dropdown-menu dropdown-menu-right'>
-            <div class='dropdown-item'>Name</div>
-            <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='#'>プロフィール</a>
-            <%= link_to t('defaults.logout'), logout_path, method: :delete, class: "dropdown-item" %>
-          </div>
+          <%= link_to t("defaults.scrap_all"), boards_path, class: "dropdown-item" %>
+          <%= link_to t("defaults.scrap_new"), new_board_path, class: "dropdown-item" %>
+          <a class='dropdown-item' href='#'>プロフィール</a>
+          <%= link_to t('defaults.logout'), logout_path, method: :delete, class: "dropdown-item" %>
         </li>
       </ul>
     </div>
