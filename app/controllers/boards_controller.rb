@@ -30,7 +30,10 @@ class BoardsController < ApplicationController
     end
 
     def edit
-        @board = current_user.boards.find(params[:id])
+        @board = Board.find(params[:id])
+        if @board.user_id != current_user.id
+            redirect_to boards_path
+        end
         if session[:url] then
             @board.url = session[:url]
             @board.title = session[:url]
@@ -57,11 +60,15 @@ class BoardsController < ApplicationController
 
     def index
         session.delete(:url) #いったん入れただけ。あとで削除する。
-        @boards = Board.where(user_id: current_user.id).order('created_at DESC')
+        @q = Board.where(user_id: current_user.id).ransack(params[:q])
+        @boards = @q.result(distinct: true).order('created_at DESC').page(params[:page])
     end
 
     def show
         @board = Board.find(params[:id])
+        if @board.user_id != current_user.id
+            redirect_to boards_path
+        end
     end
 
     def destroy

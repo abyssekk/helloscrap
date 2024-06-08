@@ -39,11 +39,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'sorcery'
 
 gem 'rails-i18n', '~> 5.1'
-gem 'byebug'
 
 gem 'simple_form'
 gem 'summernote-rails', '~> 0.8.9'
 gem 'sanitize'
+
+gem 'kaminari', '~>0.17.0'
+gem 'bootstrap4-kaminari-views'
+
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

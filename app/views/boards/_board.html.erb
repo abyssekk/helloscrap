@@ -1,22 +1,14 @@
-        <div class="col-sm-12 col-lg-12 mb-3">
-          <div id="board-id-1">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">
-                    <%= link_to board.title, board_path(board) %>
-                </h4>
-                <div class='mr10 float-right'>
-                  <%= link_to edit_board_path(board), id: "button-edit-#{board.id}" do %>
-                    <%= icon 'fa', 'pen' %>
-                  <% end %>
-                  <%= link_to board_path(board), id: "button-delete-#{board.id}", method: :delete, data: {confirm: t("defaults.delete_check")} do %>
-                    <%= icon 'fas', 'trash' %>
-                  <% end %>
-                </div>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.updated_at, format: :long %></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+<tr>
+  <td><%= link_to board.title, board_path(board) %></td>
+  <td><%= l board.created_at, format: :long %></td>
+  <td>
+    <%= link_to edit_board_path(board), id: "button-edit-#{board.id}" do %>
+      <%= icon 'fa', 'pen' %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to board_path(board), id: "button-delete-#{board.id}", method: :delete, data: {confirm: t("defaults.delete_check")} do %>
+      <%= icon 'fas', 'trash' %>
+    <% end %>
+  </td>
+</tr>
