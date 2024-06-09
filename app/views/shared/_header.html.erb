@@ -12,7 +12,7 @@
       <ul class='navbar-nav ml-auto main-nav align-items-center'>
           <%= link_to t("defaults.scrap_all"), boards_path, class: "dropdown-item" %>
           <%= link_to t("defaults.scrap_new"), new_board_path, class: "dropdown-item" %>
-          <a class='dropdown-item' href='#'>プロフィール</a>
+          <%= link_to t("defaults.profile"), profile_path, class: "dropdown-item" %>
           <%= link_to t('defaults.logout'), logout_path, method: :delete, class: "dropdown-item" %>
         </li>
       </ul>
