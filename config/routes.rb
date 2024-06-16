@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :boards, only: %i[index new create show edit update destroy]
   resource :profile, only: %i[show edit update]
+  resources :password_resets, only: %i[create edit update new]
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, on: :create
   validates :email, uniqueness: true, presence: true
   validates :nickname, presence: true, length: { maximum: 255 }
+  validates :reset_password_token, presence: true, uniqueness: true, allow_nil: true
 
   has_many :boards, dependent: :destroy
 end

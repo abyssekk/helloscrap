@@ -35,3 +35,9 @@ ja:
     create:
       success: スクラップを作成しました
       fail: スクラップの作成に失敗しました
+  password_resets:
+    new:
+      title: パスワードリセット申請
+      email: メールアドレス
+    edit:
+      title: パスワードリセット

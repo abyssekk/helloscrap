@@ -1,29 +1,35 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t '.title' %></h1>
-      <%= form_with model: @user, local: true do |f| %>
-        <div class="form-group">
-          <%= f.label :nickname %>
-          <%= f.text_field :nickname, class: 'form-control' %>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title text-center"><%= t '.title' %></h3>
+                </div>
+                <div class="card-body">
+                  <%= form_with model: @user, local: true do |f| %>
+                    <div class="form-group">
+                      <%= f.label :nickname %>
+                      <%= f.text_field :nickname, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :email %>
+                      <%= f.email_field :email, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :crypted_password %>
+                      <%= f.password_field :password, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :password_confirmation %>
+                      <%= f.password_field :password_confirmation, class: 'form-control' %>
+                    </div>
+                    <%= f.submit t('defaults.register'), class: 'btn btn-primary' %>
+                  <% end %>
+                </div>
+                <div class='card-footer text-center'>
+                  <a href="/login"><%= t '.to_login_page' %></a>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :crypted_password %>
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
-        <%= f.submit t('defaults.register'), class: 'btn btn-primary' %>
-      <% end %>
-      <div class='text-center'>
-        <a href="/login"><%= t '.to_login_page' %></a>
-      </div>
     </div>
-  </div>
 </div>
