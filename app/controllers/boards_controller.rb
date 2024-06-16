@@ -14,11 +14,15 @@ class BoardsController < ApplicationController
     end
 
     def create
-        if params[:register] then
+        if params[:register] or params[:temp_register] then
             @board = current_user.boards.build(board_params)
             if @board.save
-                redirect_to boards_path
-                flash[:success] = t('.success')
+                if params[:register].present?
+                    redirect_to boards_path
+                    flash[:success] = t('.success')
+                elsif params[:temp_register].present?
+                    redirect_to edit_board_path(@board)
+                end
             else
                 flash.now[:danger] = t('.fail')
                 render :new
@@ -43,11 +47,15 @@ class BoardsController < ApplicationController
     end
 
     def update
-        if params[:register] then
+        if params[:register] or params[:temp_register] then
             @board = Board.find(params[:id])
             if @board.update(board_params)
-                redirect_to board_path(@board)
-                flash[:success] = t('defaults.updated')
+                if params[:register].present?
+                    redirect_to board_path(@board)
+                    flash[:success] = t('defaults.updated')
+                elsif params[:temp_register].present?
+                    redirect_to edit_board_path(@board)
+                end
             else
                 flash.now[:danger] = t('defaults.not_updated')
                 render :new

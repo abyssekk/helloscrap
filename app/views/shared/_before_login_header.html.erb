@@ -11,9 +11,8 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <li class="nav-item">
-          <%= link_to t('defaults.login'), login_path, method: :get, class: "nav-link" %>
-        </li>
+        <%= link_to t("defaults.scrap_new"), new_board_path, class: "dropdown-item" %>
+        <%= link_to t('defaults.login'), login_path, method: :get, class: "dropdown-item"  %>
       </ul>
     </div>
   </nav>

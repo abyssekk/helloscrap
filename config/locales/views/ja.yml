@@ -2,6 +2,7 @@ ja:
   defaults:
     login: ログイン
     register: 登録
+    temp_register: 一時保存
     logout: ログアウト
     scrap: スクラップ
     scrap_all: スクラップ一覧

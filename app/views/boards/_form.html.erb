@@ -22,5 +22,8 @@
         <%= f.text_area :notice, class: 'form-control', rows: 10, 'data-provider': :summernote %>
       </div>
     </div>
-    <%= f.submit t('defaults.register'), class: 'btn btn-dark', name: 'register' %>
+    <% if logged_in? %>
+      <%= f.submit t('defaults.register'), name: 'register', class: 'btn btn-dark' %>
+      <%= f.submit t('defaults.temp_register'), name: 'temp_register', class: 'btn btn-dark' %>
+    <% end %>
 <% end %>
