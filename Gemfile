@@ -49,6 +49,9 @@ gem 'bootstrap4-kaminari-views'
 
 gem 'ransack'
 
+gem "chartkick"
+gem "groupdate"
+
 gem 'config'
 
 group :development, :test do

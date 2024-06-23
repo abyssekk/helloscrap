@@ -17,4 +17,6 @@
 //= require summernote/summernote-bs4.min
 //= require activestorage
 //= require turbolinks
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .

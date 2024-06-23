@@ -1,0 +1,18 @@
+<div class="container figure-container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>推移</h2>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= "選択" %>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "週間", graph_path(period: "week"), class: "dropdown-item" %>
+                <%= link_to "月間", graph_path(period: "month"), class: "dropdown-item" %>
+                <%= link_to "年間", graph_path(period: "year"), class: "dropdown-item" %>
+            </div>
+        </div>
+        <%= line_chart @chart %>
+    </div>
+  </div>
+</div>
