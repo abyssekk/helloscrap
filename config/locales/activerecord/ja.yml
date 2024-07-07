@@ -8,6 +8,13 @@ ja:
         nickname: ニックネーム
         crypted_password: パスワード
         password_confirmation: パスワード確認
-      borad:
+        id: ID
+        role: 権限
+        created_at: 登録日時
+      board:
+        id: ID
         title: タイトル
+        user: ユーザー
         body: 記事
+        created_at: 登録日時
+        updated_at: 更新日時

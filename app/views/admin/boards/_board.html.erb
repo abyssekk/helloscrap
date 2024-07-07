@@ -1,0 +1,19 @@
+<tr>
+    <td style="width: 5%">
+        <%= board.id %>
+    </td>
+    <td style="width: 50%">
+        <%= board.title %>
+    </td>
+    <td style="width: 15%">
+        <%= board.user.nickname %>
+    </td>
+    <td style="width: 10%">
+        <%= l board.created_at, format: :long %>
+    </td>
+    <td style="width: 20%">
+        <%= link_to t('defaults.show'), admin_board_path(board), class: 'btn btn-info' %>
+        <%= link_to t('defaults.edit'), edit_admin_board_path(board), class: 'btn btn-success' %>
+        <%= link_to t('defaults.delete'), admin_board_path(board), method: :delete, data: { confirm: t('defaults.delete_check') }, class: 'btn btn-danger' %>
+    </td>
+</tr>

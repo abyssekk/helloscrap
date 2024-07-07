@@ -12,6 +12,9 @@ ja:
     not_updated: アップデートできませんでした
     delete_check: 削除しますか？
     deleted: 削除しました
+    show: 詳細
+    edit: 編集
+    delete: 削除
   users:
     new:
       title: ユーザー登録

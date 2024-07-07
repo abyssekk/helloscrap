@@ -1,0 +1,40 @@
+<style>
+    .custom-container {
+        width: 95%;
+        max-width: none;
+    }
+</style>
+<div class="container pt-5 custom-container">
+  <div class="row mb-3">
+    <div class="col-12">
+    <p class="list-inline-item">登録日：<%= l @board.created_at, format: :long %></p>
+    <p class="list-inline-item">更新日：<%= l @board.updated_at, format: :long %></p>
+    <%= link_to edit_admin_board_path(@board), id: "button-edit-#{@board.id}" do %>
+      <%= icon 'fa', 'pen' %>
+    <% end %>
+    <%= link_to admin_board_path(@board), id: "button-delete-#{@board.id}", method: :delete, data: {confirm: t("defaults.delete_check")} do %>
+      <%= icon 'fas', 'trash' %>
+    <% end %><br>
+    <h2 style='display: inline;'><%= @board.title %></h2>
+    <h1></h1>
+    <p>URL: <%= @board.url %></p>
+      <!-- 内容 -->
+      <div class="row box-parent">
+        <div class="col">
+          <article class="card h-100">
+            <div class="card-body">
+              <p><b>本文</b><br><%= sanitize @board.body %></p>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article class="card h-100">
+            <div class="card-body">
+              <p><b>気付き</b><br><%= sanitize @board.notice %></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

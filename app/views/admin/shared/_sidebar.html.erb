@@ -1,9 +1,9 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <span class="brand-text font-weight-light">AdminLTE 3</span>
-  </a>
+  <%= link_to admin_root_path do %>
+    <span class="brand-text font-weight-light brand-link">AdminLTE 3</span>
+  <% end %>
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -18,7 +18,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <%= link_to '#', class: "nav-link" do %>
+          <%= link_to admin_boards_path, class: "nav-link" do %>
             <i class="nav-icon far fa-file"></i>
             <p>
               掲示板
@@ -26,7 +26,7 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to '#', class: "nav-link" do %>
+          <%= link_to admin_users_path, class: "nav-link" do %>
             <i class="nav-icon far fa-user"></i>
             <p>
               ユーザー
