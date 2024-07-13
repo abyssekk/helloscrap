@@ -55,6 +55,7 @@ gem "groupdate"
 gem 'config'
 
 gem 'psych', '~>3.1'
+gem 'ffi', '1.16.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
