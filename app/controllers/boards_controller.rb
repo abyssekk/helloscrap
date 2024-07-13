@@ -6,10 +6,15 @@ class BoardsController < ApplicationController
         @board = Board.new
 
         if session[:url] then
-            html = URI.open(session[:url]).read
-            url_body, url_title = ExtractContent::analyse(html)
-            @board = Board.new(title: url_title, body: url_body, url: session[:url])
-            session.delete(:url)
+            begin
+                html = URI.open(session[:url]).read
+                url_body, url_title = ExtractContent::analyse(html)
+                @board = Board.new(title: url_title, body: url_body, url: session[:url])
+            rescue
+                @board = Board.new(url: session[:url])
+            ensure
+                session.delete(:url)
+            end
         end
     end
 

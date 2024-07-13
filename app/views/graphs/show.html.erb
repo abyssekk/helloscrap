@@ -1,7 +1,7 @@
 <div class="container figure-container">
   <div class="row">
     <div class="col-lg-12">
-      <h2>推移</h2>
+      <h1>推移</h1>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= "選択" %>
@@ -12,7 +12,8 @@
                 <%= link_to "年間", graph_path(period: "year"), class: "dropdown-item" %>
             </div>
         </div>
-        <%= line_chart @chart %>
+        <p></p>
+        <%= column_chart @chart, colors: ["#00000"] %>
     </div>
   </div>
 </div>
