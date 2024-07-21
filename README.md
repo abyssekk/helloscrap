@@ -1,24 +1,18 @@
-# README
+# Hello Scrap
+インターネット記事の保存用サイトです。<br>
+紙の記事をスクラップするように、インターネットの記事もURLからスクラップ(自動抽出)し感想と共に保存できます。<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# URL
 
-Things you may want to cover:
+# 使用技術
+- Ruby
+- Ruby on Rails
+- Heroku
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 機能一覧
+- ユーザー登録・ログイン機能
+- 投稿機能(作成・編集・削除)
+    - 抽出機能
+- 検索機能
+- 投稿履歴のグラフ化機能
+- 管理者画面
