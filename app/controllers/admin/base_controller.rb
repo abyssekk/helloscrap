@@ -4,9 +4,17 @@ class Admin::BaseController < ApplicationController
 
     private
 
+    def logged_in?
+        !current_user.nil?
+    end
+
     def check_admin
-        unless current_user.admin?
-            redirect_to root_path
+        if logged_in?
+            unless current_user.admin?
+                redirect_to root_path
+            end
+        else
+            redirect_to admin_login_path
         end
     end
 end

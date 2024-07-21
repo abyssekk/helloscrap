@@ -21,4 +21,7 @@ Rails.application.routes.draw do
     resources :boards, only: %i[index show edit update destroy]
     resources :users, only: %i[index show edit update destroy]
   end
+
+  get '/admin/logout', to: 'admin/user_sessions#destroy'
+
 end
