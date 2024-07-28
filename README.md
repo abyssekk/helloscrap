@@ -6,6 +6,10 @@
 # URL
 https://helloscrap.app/
 
+# デモ
+
+https://github.com/user-attachments/assets/903a5c6d-4069-4735-9705-6bd427f7deb1
+
 # 使用技術
 - Ruby 2.6.9
 - Ruby on Rails 5.2.6
