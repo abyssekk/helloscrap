@@ -8,7 +8,8 @@ https://helloscrap.app/
 
 # デモ
 
-https://github.com/user-attachments/assets/903a5c6d-4069-4735-9705-6bd427f7deb1
+https://github.com/user-attachments/assets/7b43da38-76ca-4898-9a76-94f4388d89c4
+
 
 # 使用技術
 - Ruby 2.6.9
