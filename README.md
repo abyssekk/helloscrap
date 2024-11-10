@@ -3,9 +3,6 @@
 スクラップの際に、紙の記事であれば切り抜きます。<br>
 当サービスを使えば、インターネットの記事もURLからスクラップ(自動抽出)し感想と共に保存できます。<br>
 
-# URL
-https://helloscrap.app/
-
 # デモ
 
 https://github.com/user-attachments/assets/7b43da38-76ca-4898-9a76-94f4388d89c4
